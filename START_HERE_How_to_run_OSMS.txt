@@ -1,0 +1,48 @@
+OSMS - SUPERMARKET MANAGEMENT SYSTEM  (Kibet Faith Jerop, Kabarak University)
+=============================================================================
+
+WHAT YOU NEED ON YOUR COMPUTER
+------------------------------
+1. Windows 10 or 11 (Linux/Mac also work with XAMPP)
+2. XAMPP with PHP 8.1 or newer - free from https://www.apachefriends.org
+   (it includes the Apache web server, PHP and MySQL/MariaDB)
+3. A web browser - Google Chrome or Microsoft Edge
+4. About 1 GB of free disk space. No internet is needed to run the system.
+5. Optional: Microsoft Word or any PDF reader to open the documentation,
+   a USB barcode scanner and a receipt printer for a real till.
+
+HOW TO RUN IT (about 10 minutes)
+--------------------------------
+1. Install XAMPP to C:\xampp (keep the default options).
+2. Open "XAMPP Control Panel" and click START next to Apache and MySQL.
+   Both must turn green.
+3. Unzip and copy this "osms" folder into C:\xampp\htdocs
+   so that you have C:\xampp\htdocs\osms\login.php
+4. Open Command Prompt (press Windows key, type cmd, press Enter) and run:
+
+     C:\xampp\php\php.exe C:\xampp\htdocs\osms\database\setup.php --demo
+
+   It should finish with "Done. Open http://localhost/osms/".
+   (--demo loads sample products, staff, customers and 30 days of sales.)
+5. Open the browser and go to:   http://localhost/osms
+
+LOGINS (demo data)
+------------------
+  Administrator (manager):  admin        /  Admin@1234
+  Cashier:                  CSH001       /  Cashier@123   (also CSH002, CSH003)
+  Customer:                 0712000001   /  Customer@123
+
+IF SOMETHING GOES WRONG
+-----------------------
+* "Cannot connect to MySQL" / "cannot connect to the database":
+    MySQL is not started in XAMPP. Start it and try again.
+    If you changed MySQL's port or set a password, edit
+    C:\xampp\htdocs\osms\config\config.php  ('db_port' and 'db_pass').
+* MySQL will not start in XAMPP: another MySQL program is using port 3306.
+    Stop it (Windows key + R, type services.msc, find MySQL80, click Stop).
+* "Not Found" in the browser: the folder must be exactly C:\xampp\htdocs\osms
+* Running setup.php again ERASES the database and reloads the demo data.
+
+MORE HELP
+---------
+See INSTALL.md in this folder.
